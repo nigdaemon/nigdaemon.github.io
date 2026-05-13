@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <article class="article">
+    <header class="article-header">
+      <a class="back-link" href="{{ "/" | relURL }}">返回文章列表</a>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ if eq .Section "posts" }}
+    <nav class="article-nav" aria-label="Article navigation">
+      {{ with $posts.ByWeight.Next . }}
+        <a href="{{ .RelPermalink }}">上一篇：{{ .Title }}</a>
+      {{ end }}
+      {{ with $posts.ByWeight.Prev . }}
+        <a href="{{ .RelPermalink }}">下一篇：{{ .Title }}</a>
+      {{ end }}
+    </nav>
+  {{ end }}
+{{ end }}

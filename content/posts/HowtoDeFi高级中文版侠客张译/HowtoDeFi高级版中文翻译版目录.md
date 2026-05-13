@@ -2,6 +2,7 @@
 title = "《How to DeFi 高级版》中文翻译版目录"
 date = 2026-05-13
 draft = false
+weight = 1
 +++
 
 # 《How to DeFi 高级版》中文翻译版 目录

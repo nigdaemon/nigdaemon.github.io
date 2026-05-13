@@ -2,6 +2,7 @@
 title = "第2章：DEFI活动"
 date = 2026-05-13
 draft = false
+weight = 3
 +++
 
 # 第2章：DEFI活动 

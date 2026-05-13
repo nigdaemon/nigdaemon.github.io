@@ -1,7 +1,8 @@
 baseURL = "https://nigdaemon.github.io/"
 title = "XT Weblog"
 defaultContentLanguage = "zh-cn"
-theme = "hello-friend-ng"
+enableRobotsTXT = true
+summaryLength = 42
 
 
 [params]
@@ -17,6 +18,9 @@ theme = "hello-friend-ng"
 [markup]
   [markup.highlight]
     noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [menu]
   [[menu.main]]
