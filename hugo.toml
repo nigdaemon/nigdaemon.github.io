@@ -3,17 +3,17 @@ title = "XT Weblog"
 defaultContentLanguage = "zh-cn"
 enableRobotsTXT = true
 summaryLength = 42
+theme = "smigle-hugo-theme"
 
 
 [params]
   author = "XT"
+  mainSections = ["posts"]
   description = "XT的网络日志"
+  subtitle = "XT的网络日志"
   dateformat = "2006-01-02"
-
-  [params.logo]
-    logoMark = ">"
-    logoText = "XT Weblog"
-    logoHomeLink = "/"
+  dateFmt = "2006-01-02"
+  abbrDateFmt = "01-02"
 
 [markup]
   [markup.highlight]
@@ -24,11 +24,25 @@ summaryLength = 42
 
 [menu]
   [[menu.main]]
-    name = "Posts"
+    identifier = "home"
+    name = "Home"
     url = "/"
     weight = 1
 
   [[menu.main]]
-    name = "about"
+    identifier = "about"
+    name = "About"
     url = "/about/"
     weight = 2
+
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "rss"
+    name = "RSS"
+    url = "/index.xml"
+    weight = 4

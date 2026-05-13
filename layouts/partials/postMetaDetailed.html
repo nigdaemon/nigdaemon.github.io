@@ -1,0 +1,28 @@
+<div class="post-meta">
+  <strong>
+    <span>发布于</span>
+    <time>{{ .Date.Format (default "2006-01-02" .Site.Params.dateFmt) }}</time>
+    {{ with .Params.categories }}<span>分类</span>{{ end }}
+    {{ range $key, $value := .Params.categories -}}
+      {{- if $key }}，{{ end }}
+      <a href="{{ "/categories/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
+    {{- end }}
+  </strong>
+  {{ with .WordCount }}<span> • {{ . }} 字</span>{{ end }}
+  {{ with .ReadingTime }}<span> • 约 {{ . }} 分钟</span>{{ end }}
+  {{ if and .IsPage (ne .Date .Lastmod) }}
+    <div>
+      最后更新于
+      <time>{{ .Lastmod.Format (default "2006-01-02" .Site.Params.dateFmt) }}</time>
+    </div>
+  {{ end }}
+  {{ with .Params.tags }}
+    <div>
+      <span>标签：</span>
+      {{ range $key, $value := . }}
+        {{- if $key }}，{{ end }}
+        <a href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}">{{ . }}</a>
+      {{- end }}
+    </div>
+  {{ end }}
+</div>

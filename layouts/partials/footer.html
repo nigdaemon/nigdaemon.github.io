@@ -1,0 +1,21 @@
+<footer>
+  <hr />
+  {{ if .Site.Params.social }}
+    <p id="social">
+      其他主页：
+      <br />
+      {{ range $i, $e := .Site.Params.social }}
+        {{ if $i }} | {{ end }}
+        <a href="{{ .url }}">{{ .name }}</a>
+      {{ end }}
+    </p>
+  {{ end }}
+  <p class="copyright">
+    Copyright © {{ now.Format "2006" }}
+    <a href="{{ .Site.BaseURL }}"><strong>{{ default "XT" .Site.Params.Author }}</strong></a>.
+  </p>
+  <p class="builtWith">
+    Built with <a href="https://gohugo.io/">Hugo</a>, using the
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a> theme.
+  </p>
+</footer>
