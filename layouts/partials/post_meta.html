@@ -1,0 +1,6 @@
+{{- if not .Date.IsZero -}}
+<span title="{{ .Date }}">发布于 {{ .Date | time.Format (default "2006-01-02" site.Params.DateFormat) }}</span>
+{{- end -}}
+{{- with (partial "author.html" .) -}}
+&nbsp;·&nbsp;{{ . }}
+{{- end -}}

@@ -2,18 +2,44 @@ baseURL = "https://nigdaemon.github.io/"
 title = "XT Weblog"
 defaultContentLanguage = "zh-cn"
 enableRobotsTXT = true
-summaryLength = 42
-theme = "smigle-hugo-theme"
+summaryLength = 80
+theme = "PaperMod"
+
+[pagination]
+  pagerSize = 100
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
 
 [params]
   author = "XT"
   mainSections = ["posts"]
   description = "XT的网络日志"
-  subtitle = "XT的网络日志"
-  dateformat = "2006-01-02"
-  dateFmt = "2006-01-02"
-  abbrDateFmt = "01-02"
+  defaultTheme = "light"
+  disableThemeToggle = true
+  ShowReadingTime = false
+  ShowWordCount = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  hideSummary = true
+
+  [params.label]
+    text = "XT Weblog"
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.35
+    minMatchCharLength = 1
+    keys = ["title", "permalink", "summary", "content"]
 
 [markup]
   [markup.highlight]
@@ -25,24 +51,30 @@ theme = "smigle-hugo-theme"
 [menu]
   [[menu.main]]
     identifier = "home"
-    name = "Home"
+    name = "首页"
     url = "/"
     weight = 1
 
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
     weight = 2
 
   [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
+    identifier = "categories"
+    name = "分类"
+    url = "/categories/"
     weight = 3
 
   [[menu.main]]
-    identifier = "rss"
-    name = "RSS"
-    url = "/index.xml"
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
     weight = 4
+
+  [[menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/about/"
+    weight = 5
