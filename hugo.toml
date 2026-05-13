@@ -1,3 +1,30 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://nigdaemon.github.io/"
+title = "XT Weblog"
+defaultContentLanguage = "zh-cn"
+theme = "hello-friend-ng"
+
+
+[params]
+  author = "XT"
+  description = "XT的网络日志"
+  dateformat = "2006-01-02"
+
+  [params.logo]
+    logoMark = ">"
+    logoText = "XT Weblog"
+    logoHomeLink = "/"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "about"
+    url = "/about/"
+    weight = 2
